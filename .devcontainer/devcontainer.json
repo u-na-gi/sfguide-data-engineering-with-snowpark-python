@@ -14,7 +14,16 @@
     // "forwardPorts": []
   
     // Use 'postCreateCommand' to run commands after the container is created.
-    // "postCreateCommand": "conda init",
+    "postCreateCommand": "conda init",
+    "mounts": [{
+      "type": "bind",
+      "source": "${localEnv:HOME}/.snowflake/rsa_key.p8",
+      "target": "/home/vscode/.snowflake/rsa_key.p8"
+    }],
+
+    "containerEnv": {
+      "SNOWFLAKE_DEFAULT_CONNECTION_NAME": "tuts"
+    },
   
     // Configure tool-specific properties.
     "customizations": {
