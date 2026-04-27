@@ -9,11 +9,13 @@
 # SNOWFLAKE ADVANTAGE: Streams for incremental processing (CDC)
 # SNOWFLAKE ADVANTAGE: Streams on views
 
+# 多分これを　ETL処理として使うイメージになるな
 
 from snowflake.snowpark import Session
 #import snowflake.snowpark.types as T
 import snowflake.snowpark.functions as F
 
+# 列指向だからpandasみたいに扱えるのは控えめにいって最高では？
 
 def create_pos_view(session):
     session.use_schema('HARMONIZED')
